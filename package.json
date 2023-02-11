@@ -13,7 +13,8 @@
   },
   "scripts": {
     "build": "microbundle",
-    "install": "npm install && npm run build"
+    "install": "npm install",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "microbundle": "^0.15.1"
