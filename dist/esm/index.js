@@ -2156,8 +2156,8 @@
     const { data } = await axios_default.post(url, object);
     return data;
   };
-  var editObject = async ({ apiKey, id, object }) => {
-    const url = `${LOCATION_HISTORY_API_BASE_URL}/objects/${id}?key=${apiKey}`;
+  var editObject = async ({ apiKey, adminKey, id, object }) => {
+    const url = `${LOCATION_HISTORY_API_BASE_URL}/objects/${id}?key=${apiKey}&adminKey=${adminKey}`;
     const { data } = await axios_default.put(url, object);
     return data;
   };
