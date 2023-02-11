@@ -13,8 +13,8 @@ const addObject = async ({ apiKey, adminKey, object }) => {
   return data;
 };
 
-const editObject = async ({ apiKey, id, object }) => {
-  const url = `${LOCATION_HISTORY_API_BASE_URL}/objects/${id}?key=${apiKey}`;
+const editObject = async ({ apiKey, adminKey, id, object }) => {
+  const url = `${LOCATION_HISTORY_API_BASE_URL}/objects/${id}?key=${apiKey}&adminKey=${adminKey}`;
   const { data } = await axios.put(url, object);
   return data;
 };
