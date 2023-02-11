@@ -12,9 +12,7 @@
     "valvelet": "^1.1.1"
   },
   "scripts": {
-    "build": "microbundle",
-    "install": "npm install",
-    "prepare": "npm run build"
+    "build": "microbundle"
   },
   "devDependencies": {
     "microbundle": "^0.15.1"
