@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "source": "index.js",
   "main": "./dist/index.js",
-  "module": "./dist/index.modle.js",
+  "module": "./dist/index.module.js",
   "unpkg": "./dist/index.umd.js",
   "license": "MIT",
   "dependencies": {
