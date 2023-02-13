@@ -4,7 +4,14 @@ const LOCATION_HISTORY_API_BASE_URL =
   process.env.LOCATION_HISTORY_API_BASE_URL ||
   "https://api.tomtom.com/locationHistory/1";
 
-const sendPosition = async ({ apiKey, longitude, latitude, altitude }) => {
+const sendPosition = async ({
+  apiKey,
+  objectId,
+  longitude,
+  latitude,
+  altitude,
+  timestamp
+}) => {
   const url = `${LOCATION_HISTORY_API_BASE_URL}/history/positions?key=${apiKey}`;
   const coordinates = [
     longitude,
@@ -16,7 +23,9 @@ const sendPosition = async ({ apiKey, longitude, latitude, altitude }) => {
     geometry: {
       type: "Point",
       coordinates
-    }
+    },
+    object: objectId,
+    ...(timestamp && { timestamp })
   };
   const { data } = await http.post(url, position);
   return data;
