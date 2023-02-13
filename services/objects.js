@@ -1,16 +1,8 @@
-import axios from "axios";
-import rateLimit from "axios-rate-limit";
+import http from "../http";
 
-const QPS_LIMIT = process.env.QPS_LIMIT || 5;
-const QPS_INTERVAL = process.env.QPS_INTERVAL || 1000;
 const LOCATION_HISTORY_API_BASE_URL =
   process.env.LOCATION_HISTORY_API_BASE_URL ||
   "https://api.tomtom.com/locationHistory/1";
-
-const http = rateLimit(axios.create(), {
-  maxRequests: QPS_LIMIT,
-  perMilliseconds: QPS_INTERVAL
-});
 
 const addObject = async ({ apiKey, adminKey, object }) => {
   const url = `${LOCATION_HISTORY_API_BASE_URL}/objects?key=${apiKey}&adminKey=${adminKey}`;
