@@ -2,7 +2,7 @@
   "name": "location-history",
   "version": "1.0.0",
   "source": "index.js",
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.js",
   "module": "./dist/index.modle.js",
   "unpkg": "./dist/index.umd.js",
   "license": "MIT",
