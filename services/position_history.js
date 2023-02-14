@@ -6,13 +6,14 @@ const LOCATION_HISTORY_API_BASE_URL =
 
 const sendPosition = async ({
   apiKey,
+  adminKey,
   objectId,
   longitude,
   latitude,
   altitude,
   timestamp
 }) => {
-  const url = `${LOCATION_HISTORY_API_BASE_URL}/history/positions?key=${apiKey}`;
+  const url = `${LOCATION_HISTORY_API_BASE_URL}/history/positions?key=${apiKey}&adminKey=${adminKey}`;
   const coordinates = [
     longitude,
     latitude,
