@@ -18,7 +18,7 @@ const editObject = async ({ apiKey, adminKey, id, object }) => {
 
 const getObjects = async ({ apiKey }) => {
   const url = `${LOCATION_HISTORY_API_BASE_URL}/objects?key=${apiKey}`;
-  const { data } = await axios.get(url);
+  const { data } = await http.get(url);
   const objectDetailRequests = data.objects.map(({ id }) =>
     getObjectDetail({ apiKey, id })
   );
