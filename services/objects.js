@@ -34,7 +34,7 @@ const getObjectDetail = async ({ apiKey, id }) => {
 
 const deleteObject = async ({ apiKey, id }) => {
   const url = `${LOCATION_HISTORY_API_BASE_URL}/objects/${id}?key=${apiKey}`;
-  const { data } = http.delete(url);
+  const { data } = await http.delete(url);
   return data;
 };
 

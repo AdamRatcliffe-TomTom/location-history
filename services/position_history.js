@@ -51,13 +51,13 @@ const positionHistory = async ({
   if (maxResults) url += `&maxResults=${maxResults}`;
   if (pageNumber) url += `&pageNumber=${pageNumber}`;
 
-  const { data } = http.get(url);
+  const { data } = await http.get(url);
   return data;
 };
 
 const clearPositionHistory = async ({ apiKey, adminKey }) => {
   const url = `${LOCATION_HISTORY_API_BASE_URL}/history/position?key=${apiKey}&adminKey=${adminKey}`;
-  const { data } = http.delete(url);
+  const { data } = await http.delete(url);
   return data;
 };
 
