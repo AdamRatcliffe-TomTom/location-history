@@ -40,14 +40,13 @@ const lastPosition = async ({ apiKey, objectId }) => {
 
 const positionHistory = async ({
   apiKey,
-  adminKey,
   objectId,
   from,
   to,
   maxResults,
   pageNumber
 }) => {
-  let url = `${LOCATION_HISTORY_API_BASE_URL}/history/positions/${objectId}?key=${apiKey}&adminKey=${adminKey}&from=${from}`;
+  let url = `${LOCATION_HISTORY_API_BASE_URL}/history/positions/${objectId}?key=${apiKey}&from=${from}`;
   if (to) url += `&to=${to}`;
   if (maxResults) url += `&maxResults=${maxResults}`;
   if (pageNumber) url += `&pageNumber=${pageNumber}`;
